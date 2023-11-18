@@ -418,7 +418,7 @@
   <div class="row container w-100" style="overflow: hidden!important;">
 
     <!-- First Carousel -->
-    <div id="carousel1" class="carousel slide  col-lg-4 col-md-6 col-sm-12 mt-5 mt-lg-0" data-bs-ride="carousel" data-bs-touch="true">
+    <div id="carousel1" class="carousel slide  col-lg-4 col-md-6 col-sm-6 mt-5 mt-lg-0" data-bs-ride="carousel" data-bs-touch="true">
       <h3 class="text-center font-weight-bold fs-5">MILESTONES</h3>
       <div class="carousel-inner align-self-start">
         <div class="carousel-item ">
@@ -431,10 +431,19 @@
           <img class="d-block rounded-2 shadow-lg w-100" src="https://srkrec.edu.in/img/slides/new/13.jpg" alt="Third slide">
         </div>
       </div>
+
+      <a class="carousel-control-prev" href="#carousel1" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel1" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   
     <!-- Second Carousel -->
-    <div id="carousel2" class="carousel slide  col-lg-4 col-md-6 col-sm-12  mt-5 mt-lg-0" data-bs-ride="carousel" data-bs-touch="true">
+    <div id="carousel2" class="carousel slide  col-lg-4 col-md-6 col-sm-6  mt-5 mt-lg-0" data-bs-ride="carousel" data-bs-touch="true">
       <h3 class="text-center font-weight-bold fs-5">ACHIEVEMENTS</h3>
       <div class="carousel-inner align-self-center">
         <div class="carousel-item">
@@ -447,10 +456,19 @@
           <img class="d-block w-100 rounded-2 shadow-lg" src="https://srkrec.edu.in/img/slides/new/16.jpg" alt="Third slide">
         </div>
       </div>
+
+      <a class="carousel-control-prev" href="#carousel2" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel2" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   
     <!-- Third Carousel -->
-    <div id="carousel3" class="carousel slide  col-lg-4 col-md-6 col-sm-12 mt-5 mt-lg-0" data-bs-ride="carousel" data-bs-touch="true" onmouseover="c_stop(e)" onmouseout="this.start();">
+    <div id="carousel3" class="carousel slide  col-lg-4 col-md-6 col-sm-6 mt-5 mt-lg-0" data-bs-ride="carousel" data-bs-touch="true" onmouseover="c_stop(e)" onmouseout="this.start();">
       <h3 class="text-center font-weight-bold fs-5">HAPPENINGS</h3>
       <div class="carousel-inner align-self-end" style="min-height: 450px;">
         <div class="carousel-item">
@@ -463,6 +481,14 @@
           <img class="d-block w-100 rounded-2 shadow-lg" src="https://srkrec.edu.in/img/slides/new/11.jpg" alt="Third slide">
         </div>
       </div>
+      <a class="carousel-control-prev" href="#carousel3" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel3" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
 </div>
 </center>
@@ -487,36 +513,43 @@
 
     
     
+     var carousel1;
+var carousel2;
+var carousel3;
+
+document.addEventListener('DOMContentLoaded', function () {
+  carousel1 = new bootstrap.Carousel(document.getElementById('carousel1'));
+  carousel2 = new bootstrap.Carousel(document.getElementById('carousel2'));
+  carousel3 = new bootstrap.Carousel(document.getElementById('carousel3'));
+
+  carousel2.pause();
+  carousel3.pause();
+
+  document.getElementById('carousel1').addEventListener('slid.bs.carousel', function () {
+    setTimeout(() => {
+      carousel2.next();
+    }, 4000);
+  });
+
+  document.getElementById('carousel2').addEventListener('slid.bs.carousel', function () {
+    setTimeout(() => {
+      carousel3.next();
+    }, 4000);
+  });
+
+  document.getElementById('carousel3').addEventListener('slid.bs.carousel', function () {
+    setTimeout(() => {
+      carousel1.next();
+    }, 4000);
+  });
+
+  // Start the cycle after the initial load
+  setTimeout(() => {
+    carousel1.cycle();
+  }, 4000);
+});
+
     
-    carousel2.pause();
-    carousel3.pause();
-
-    document.getElementById('carousel1').addEventListener('slid.bs.carousel', function () {
-      
-      setTimeout(()=>{
-        
-        carousel3.next();
-      },4000);
-      carousel1.pause();
-    });
-
-    document.getElementById('carousel2').addEventListener('slid.bs.carousel', function () {
-      
-      setTimeout(()=>{
-        carousel1.next();
-        
-      },4000);
-      carousel2.pause();
-    });
-
-    document.getElementById('carousel3').addEventListener('slid.bs.carousel', function () {
-      
-      setTimeout(()=>{
-        carousel2.next();
-        
-      },4000);
-      carousel3.pause();
-    });
 
   });
   
