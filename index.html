@@ -492,25 +492,30 @@
     carousel3.pause();
 
     document.getElementById('carousel1').addEventListener('slid.bs.carousel', function () {
+      
       setTimeout(()=>{
-
-        carousel2.cycle();
-      },7000);
+        
+        carousel3.next();
+      },4000);
+      carousel1.pause();
     });
 
     document.getElementById('carousel2').addEventListener('slid.bs.carousel', function () {
-      carousel1.pause();
+      
       setTimeout(()=>{
-      carousel3.cycle();
-
-      },7000);
+        carousel1.next();
+        
+      },4000);
+      carousel2.pause();
     });
 
     document.getElementById('carousel3').addEventListener('slid.bs.carousel', function () {
+      
       setTimeout(()=>{
-      carousel1.cycle();
-      },7000);
-      carousel1.pause();
+        carousel2.next();
+        
+      },4000);
+      carousel3.pause();
     });
 
   });
