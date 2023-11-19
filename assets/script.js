@@ -117,3 +117,53 @@ function toggleParagraph() {
     }
   }
 }
+
+
+
+// Main page bottom carousels
+  var carousel1;
+  var carousel2;
+  var carousel3;
+  document.addEventListener('DOMContentLoaded', function () {
+     carousel1 = new bootstrap.Carousel(document.getElementById('carousel1'));
+
+     carousel2 = new bootstrap.Carousel(document.getElementById('carousel2'));
+
+     carousel3 = new bootstrap.Carousel(document.getElementById('carousel3'));
+
+document.addEventListener('DOMContentLoaded', function () {
+  carousel1 = new bootstrap.Carousel(document.getElementById('carousel1'));
+  carousel2 = new bootstrap.Carousel(document.getElementById('carousel2'));
+  carousel3 = new bootstrap.Carousel(document.getElementById('carousel3'));
+
+  carousel2.pause();
+  carousel3.pause();
+
+  document.getElementById('carousel1').addEventListener('slid.bs.carousel', function () {
+    setTimeout(() => {
+      carousel2.next();
+    }, 4000);
+  });
+
+  document.getElementById('carousel2').addEventListener('slid.bs.carousel', function () {
+    setTimeout(() => {
+      carousel3.next();
+    }, 4000);
+  });
+
+  document.getElementById('carousel3').addEventListener('slid.bs.carousel', function () {
+    setTimeout(() => {
+      carousel1.next();
+    }, 4000);
+  });
+
+  // Start the cycle after the initial load
+  setTimeout(() => {
+    carousel1.cycle();
+  }, 4000);
+});
+
+    
+
+  });
+  // Main page bottom carousels end
