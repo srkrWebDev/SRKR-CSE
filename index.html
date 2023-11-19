@@ -29,6 +29,78 @@
     width: 100%;
     /* height: 100%; */
   }
+
+  .imgcontainer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    background-color: white;
+    max-width: 80%;
+    margin: 7% auto 10% auto;
+    box-shadow: 0 0 20px -2px;
+  }
+  
+  /* .row-1 {
+    display: flex;
+  }
+  
+  .row-2 {
+    display: flex;
+  }
+  
+  .imgcontainer__half-image {
+    flex: 1;
+    background-image: url("./images/hod.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 5em;
+    border-radius: 1em;
+  }
+  
+  .imgcontainer__half-content {
+    padding: 5em;
+    flex: 1;
+  } */
+  
+  .item-type {
+    color: #7676
+  }  
+  /* .paragraph-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  
+  .paragraph-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+    }
+  } */
+  
+  /* .paragraph-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  
+  .paragraph-container > div {
+    flex: 1;
+    padding: 0 10px;
+  } */
+  
 </style>
 
 </head>
@@ -123,58 +195,69 @@
 
 
       <!-- Hod sir container -->
-<div class="imgcontainer">
-  <div class="imgcontainer__half-image" id="halfImage"></div>
-  <div class="imgcontainer__half-content">
-    <h2 class="item-type">HEAD OF THE DEPARTMENT</h2>
-    <h3 class="item-title">Dr. V. Chandra Sekhar</h3>
-    <p class="item-description">
-      <h6>Contact: <span class="detail">+91 9440351652</span></h6>
-      <h6>Email ID: <span class="detail">dr.vcs@srkrec.ac.in</span></h6>
-      <h6>Address: <span class="detail">SRKR Engineering College,
-        Bhimavaram,
-        West Godavari,
-        Andhra pradesh.</span></h6>
-      </p>
-    <button class="button-66 know" type="button" id="Show" onclick="toggleParagraph()">Show More</button>
-    <div class="para" id="paragraph" >
-        <h5>Education:</h5>
-        <ul>
-        <li>Ph.D., [Computer Science and Systems Engineering] from Andhra University, Visakhapatnam</li>
-        <li> M.Tech., [Computer Science and Technology] from Andhra University, Visakhapatnam</li></ul>
-        <h5>Teaching Experience:</h5>
-        <ul><li> Teaching Experience With in college : 13Years</li>
-        <li> Total Teaching Experience : 23 Years</li></ul>
-        <h5>Members of Professional Bodies:</h5>
-        <ul><li> Vice chair of IEEE Computer Society - Vizag Bay Section</li>
-        <li> Member of ACM.</li>
-        <li> Life member of IACSIT</li>
-        <li> Life member of ISTE</li></ul>
-        <h5>Projects:</h5>
-        <ul><li> AICTE funded MODROBS(Worth for 9 Lakhs) - Ongoing</li>
-        <li> Books Published : 01</li>
-        <li> Patents Published : 01</li>
-        <li> Workshops/STTP Attended : 21</li>
-        <li> Workshops Organized / Conducted : 13</li></ul>
-        <h5>Subjects Taught:</h5>
-        <ul><li> Machine Learning</li>
-        <li> Software Engineering</li>
-        <li> Object Oriented Software Engineering</li>
-        <li> Data Communications</li>
-        <li> Computer Networks</li>
-        <li> Operating Systems</li>
-        <li> Systems Programming</li>
-        <li> Data Analysis and visualization using Python</li>
-        <li> Data Structures</li>
-        <li> Microprocessors</li>
-        <li> OOSE lab</li>
-        <li> OS lab</li>
-        <li> Microprocessor lab</li>
-        <li> DBMS lab</li>
-      </ul>
-    </div>
-  </div>
-</div>
+      <div class="imgcontainer">
+        <div class="row-1 d-flex flex-column flex-md-row">
+          <div class="imgcontainer__half-image" id="halfImage"></div>
+          <div class="imgcontainer__half-content">
+            <h2 class="item-type">HEAD OF THE DEPARTMENT</h2>
+            <h3 class="item-title">Dr. V. Chandra Sekhar</h3>
+            <p class="item-description">
+              <h6>Contact: <span class="detail">+91 9440351652</span></h6>
+              <h6>Email ID: <span class="detail">dr.vcs@srkrec.ac.in</span></h6>
+              <h6>Address: <span class="detail">SRKR Engineering College,
+                Bhimavaram,
+                West Godavari,
+                Andhra pradesh.</span></h6>
+            </p>
+            <button class="button-66 know" type="button" id="Show" onclick="toggleParagraph()">Show More</button>
+          </div>
+        </div>
+        <div class="row-2 container w-100 paragraph-container mt-2 mt-md-4 ">
+          <div class="row justify-content-center ">
+            <div class="first-column col-md-6">
+              <h5>Education:</h5>
+              <ul>
+                <li>Ph.D., [Computer Science and Systems Engineering] from Andhra University, Visakhapatnam</li>
+                <li>M.Tech., [Computer Science and Technology] from Andhra University, Visakhapatnam</li>
+              </ul>
+              <h5>Teaching Experience:</h5>
+              <ul><li>Teaching Experience With in college : 13Years</li>
+                <li>Total Teaching Experience : 23 Years</li></ul>
+              <h5>Members of Professional Bodies:</h5>
+              <ul><li>Vice chair of IEEE Computer Society - Vizag Bay Section</li>
+                <li>Member of ACM.</li>
+                <li>Life member of IACSIT</li>
+                <li>Life member of ISTE</li></ul>
+                <h5>Projects:</h5>
+                <ul><li>AICTE funded MODROBS(Worth for 9 Lakhs) - Ongoing</li>
+                  <li>Books Published : 01</li>
+                  <li>Patents Published : 01</li>
+                  <li>Workshops/STTP Attended : 21</li>
+                  <li>Workshops Organized / Conducted : 13</li></ul>
+            </div>
+            <div class="second-column col-md-6">
+             
+              
+                <h5>Subjects Taught:</h5>
+                <ul><li>Machine Learning</li>
+                <li>Software Engineering</li>
+                <li>Object Oriented Software Engineering</li>
+                <li>Data Communications</li>
+                <li>Computer Networks</li>
+                <li>Operating Systems</li>
+                <li>Systems Programming</li>
+                <li>Data Analysis and visualization using Python</li>
+                <li>Data Structures</li>
+                <li>Microprocessors</li>
+                <li>OOSE lab</li>
+                <li>OS lab</li>
+                <li>Microprocessor lab</li>
+                <li>DBMS lab</li></ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
 <!-- Hod sir container end-->
 
     <!-- college discription  -->

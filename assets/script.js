@@ -90,3 +90,30 @@ var observer = new IntersectionObserver(handleIntersection, {
 
 observer.observe(counterSection);
 
+function toggleParagraph() {
+  var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  var paragraphContainer = document.querySelector(".paragraph-container");
+  var text = document.getElementById("Show");
+
+  if (screenWidth >= 600) {
+    var halfImage = document.getElementById("halfImage");
+
+    if (paragraphContainer.style.display === "none") {
+      paragraphContainer.style.display = "block";
+      halfImage.style.backgroundImage = "url('../assets/images/hod.jpeg')";
+      text.innerHTML = "Show Less";
+    } else {
+      paragraphContainer.style.setProperty("display", "none", "important");
+      halfImage.style.backgroundImage = "url('../assets/images/hod.jpeg')";
+      text.innerHTML = "Show More";
+    }
+  } else {
+    if (paragraphContainer.style.display === "none") {
+      paragraphContainer.style.display = "block";
+      text.innerHTML = "Show Less";
+    } else {
+      paragraphContainer.style.setProperty("display", "none", "important");
+      text.innerHTML = "Show More";
+    }
+  }
+}
