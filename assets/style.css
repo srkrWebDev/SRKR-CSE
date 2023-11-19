@@ -42,8 +42,7 @@ body {
     background-size: cover;
     background-position: center;
     padding: 5em;
-    border-top-left-radius: 1em;
-    border-bottom-left-radius: 1em;
+    border-radius: 1em;
 }
 
 .imgcontainer__half-content {
@@ -81,8 +80,7 @@ body {
     }
 
     .imgcontainer__half-image {
-        border-top-right-radius: 1em;
-        border-bottom-left-radius: 0;
+        border-radius : 1em;
         min-height: 300px;
     }
 
