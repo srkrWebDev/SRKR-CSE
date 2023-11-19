@@ -90,3 +90,80 @@ var observer = new IntersectionObserver(handleIntersection, {
 
 observer.observe(counterSection);
 
+function toggleParagraph() {
+  var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  var paragraphContainer = document.querySelector(".paragraph-container");
+  var text = document.getElementById("Show");
+
+  if (screenWidth >= 600) {
+    var halfImage = document.getElementById("halfImage");
+
+    if (paragraphContainer.style.display === "none") {
+      paragraphContainer.style.display = "block";
+      halfImage.style.backgroundImage = "url('../assets/images/hod.jpeg')";
+      text.innerHTML = "Show Less";
+    } else {
+      paragraphContainer.style.setProperty("display", "none", "important");
+      halfImage.style.backgroundImage = "url('../assets/images/hod.jpeg')";
+      text.innerHTML = "Show More";
+    }
+  } else {
+    if (paragraphContainer.style.display === "none") {
+      paragraphContainer.style.display = "block";
+      text.innerHTML = "Show Less";
+    } else {
+      paragraphContainer.style.setProperty("display", "none", "important");
+      text.innerHTML = "Show More";
+    }
+  }
+}
+
+
+
+// Main page bottom carousels
+  var carousel1;
+  var carousel2;
+  var carousel3;
+  document.addEventListener('DOMContentLoaded', function () {
+     carousel1 = new bootstrap.Carousel(document.getElementById('carousel1'));
+
+     carousel2 = new bootstrap.Carousel(document.getElementById('carousel2'));
+
+     carousel3 = new bootstrap.Carousel(document.getElementById('carousel3'));
+
+document.addEventListener('DOMContentLoaded', function () {
+  carousel1 = new bootstrap.Carousel(document.getElementById('carousel1'));
+  carousel2 = new bootstrap.Carousel(document.getElementById('carousel2'));
+  carousel3 = new bootstrap.Carousel(document.getElementById('carousel3'));
+
+  carousel2.pause();
+  carousel3.pause();
+
+  document.getElementById('carousel1').addEventListener('slid.bs.carousel', function () {
+    setTimeout(() => {
+      carousel2.next();
+    }, 4000);
+  });
+
+  document.getElementById('carousel2').addEventListener('slid.bs.carousel', function () {
+    setTimeout(() => {
+      carousel3.next();
+    }, 4000);
+  });
+
+  document.getElementById('carousel3').addEventListener('slid.bs.carousel', function () {
+    setTimeout(() => {
+      carousel1.next();
+    }, 4000);
+  });
+
+  // Start the cycle after the initial load
+  setTimeout(() => {
+    carousel1.cycle();
+  }, 4000);
+});
+
+    
+
+  });
+  // Main page bottom carousels end
